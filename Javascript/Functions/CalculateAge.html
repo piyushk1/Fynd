@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculate age</title>
+  </head>
+  <body>
+    <script>
+      let form = document.createElement("form");
+
+      let label = document.createElement("label");
+      label.setAttribute("for", "age");
+      label.innerHTML = "Please Enter Birthyear: ";
+
+      let input = document.createElement("input");
+      input.setAttribute("type", "text");
+      input.setAttribute("id", "age");
+
+      let button = document.createElement("button");
+      button.setAttribute("type", "button");
+      button.innerHTML = "Submit";
+
+      form.appendChild(label);
+      form.appendChild(input);
+      form.appendChild(button);
+      console.log("Hello");
+
+      document.body.append(form);
+
+      function getValue() {
+        let inputValue = document.getElementById("age").value;
+        if (isNaN(inputValue)) {
+          alert("Pls Enter a correct birthyear");
+          return;
+        }
+        let age = 2023 - parseFloat(inputValue);
+        console.log(age);
+        return alert("The person's Age is:" + age);
+      }
+
+      button.addEventListener("click", getValue);
+    </script>
+  </body>
+</html>
