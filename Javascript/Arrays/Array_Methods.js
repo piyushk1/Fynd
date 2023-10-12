@@ -34,3 +34,5 @@ delete newArr[2];
 
 console.log(newArr);
 console.log(newArr.length);
+
+let;

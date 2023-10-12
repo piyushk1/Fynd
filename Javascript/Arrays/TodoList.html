@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+  </head>
+  <body>
+    <h1>Task Manager</h1>
+    <div class="task_Form">
+      <input type="text" id="inputText" placeholder="Add a new Task" />
+      <button onclick="addToTask()" type="button">Add To Task</button>
+    </div>
+
+    <div id="container">
+      <ul id="taskList"></ul>
+      <button onclick="deleteSelectedTasks()">Delete Selected Tasks</button>
+    </div>
+
+    <script>
+      let taskList = [];
+      let taskListElement = document.getElementById("taskList");
+
+      function addToTask() {
+        let taskInput = document.getElementById("inputText");
+        let taskText = taskInput.value;
+        if (taskText !== "") {
+          taskList.push({ text: taskText, checked: false });
+          taskInput.value = "";
+          displayList();
+        }
+      }
+
+      function displayList() {
+        taskListElement.innerHTML = "";
+
+        taskList.forEach((task, index) => {
+          let taskItem = document.createElement("li");
+          let checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.checked = task.checked;
+          checkbox.addEventListener("change", function () {
+            taskList[index].checked = this.checked;
+          });
+          taskItem.appendChild(checkbox);
+          taskItem.appendChild(document.createTextNode(task.text));
+          taskListElement.appendChild(taskItem);
+        });
+      }
+
+      function deleteSelectedTasks() {
+        taskList = taskList.filter((task) => !task.checked);
+        displayList();
+      }
+    </script>
+  </body>
+</html>

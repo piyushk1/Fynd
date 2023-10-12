@@ -1,0 +1,23 @@
+let circle = [10, 20, 30];
+
+let area = [];
+
+for (let i = 0; i < circle.length; i++) {
+  area[i] = circle[i] * circle[i] * 3.14;
+}
+
+console.log(area);
+// using map
+
+let circleArea = circle.map((item) => item * item * 3.14);
+
+console.log(circleArea);
+//using ForEach
+
+let marks = [50, 60, 29, 22, 55];
+
+marks.forEach((x) => {
+  x = x * 2;
+  console.log(x);
+});
+console.log(marks);

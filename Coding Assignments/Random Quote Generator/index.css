@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+#container {
+  background-image: url("./background.jpg");
+  height: 800px;
+  width: 100%;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quoteContainer_Card {
+  background-color: white;
+  border: 5px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  max-width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.quoteContainer_Card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+h5 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #888;
+}
+
+button.round {
+  border-radius: 50%;
+  font-size: 24px;
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+button.next {
+  background-color: #04aa6d;
+  color: white;
+}
+
+button:hover {
+  background-color: #ddd;
+}
